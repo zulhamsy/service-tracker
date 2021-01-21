@@ -1,7 +1,8 @@
-<template>
+<template functional>
   <button
-    class="py-2 px-6 font-semibold rounded focus:outline-none text-lg"
-    :class="disabledClass || color"
+    class="font-semibold rounded focus:outline-none"
+    :class="[props.color, props.size, data.staticClass]"
+    v-on="listeners"
   >
     <slot></slot>
   </button>
@@ -9,25 +10,30 @@
 
 <script>
 export default {
+  name: 'CustomButton',
+  functional: true,
   props: {
     color: {
       type: String,
       required: false
-    }
-  },
-  computed: {
-    disabledClass() {
-      if (this.$attrs.disabled != undefined) {
-        return 'disabled'
-      } else {
-        return false
-      }
+    },
+    size: {
+      type: String,
+      default: 'lg'
     }
   }
 }
 </script>
 
 <style scoped>
+.lg {
+  @apply py-2 px-6 text-lg;
+}
+
+.md {
+  @apply py-2 px-4 text-base;
+}
+
 .primary {
   @apply bg-blue-600 text-white;
   @apply hover:bg-blue-700;
@@ -58,8 +64,9 @@ export default {
   @apply focus:ring focus:ring-gray-500 focus:ring-offset-0 focus:text-gray-600;
 }
 
-.disabled {
-  @apply bg-gray-300 text-white;
+button:disabled {
+  @apply bg-gray-300 text-white border-0;
+  @apply hover:bg-gray-300 hover:text-white;
   @apply cursor-default;
 }
 </style>
