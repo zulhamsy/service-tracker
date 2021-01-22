@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'CustomButton',
+  name: 'custom-button',
   functional: true,
   props: {
     color: {

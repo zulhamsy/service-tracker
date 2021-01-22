@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'CustomInput',
+  name: 'custom-input',
   functional: true,
   inheritAttrs: true,
   props: {
