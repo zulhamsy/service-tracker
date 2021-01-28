@@ -51,6 +51,7 @@ ul {
 li {
   @apply flex-1;
   @apply px-4 py-3 text-gray-500 cursor-pointer text-center;
+  @apply hover:bg-blue-50;
 }
 
 .active {
