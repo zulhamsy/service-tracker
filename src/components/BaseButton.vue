@@ -3,6 +3,7 @@
     class="font-semibold rounded focus:outline-none"
     :class="[props.color, props.size, data.staticClass]"
     v-on="listeners"
+    v-bind="data.attrs"
   >
     <slot></slot>
   </button>
@@ -12,6 +13,7 @@
 export default {
   name: 'custom-button',
   functional: true,
+  inheritAttrs: true,
   props: {
     color: {
       type: String,

@@ -16,7 +16,9 @@
         <base-input :value="time" class="flex" placeholder="Date" />
       </template>
     </date-picker>
-    <base-button color="primary" size="md">Submit Ride</base-button>
+    <base-button color="primary" size="md" type="submit"
+      >Submit Ride</base-button
+    >
   </form>
 </template>
 
