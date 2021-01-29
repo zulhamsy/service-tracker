@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
+import VueEllipseProgress from 'vue-ellipse-progress'
 import './assets/tailwind.css'
 
 Vue.config.productionTip = false
@@ -41,6 +42,8 @@ requireComponent.keys().forEach(fileName => {
     componentConfig.default || componentConfig
   )
 })
+
+Vue.use(VueEllipseProgress)
 
 new Vue({
   router,
