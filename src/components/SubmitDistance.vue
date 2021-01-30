@@ -4,16 +4,16 @@
       placeholder="Distance in KM"
       type="number"
       v-model.number="distance"
-      class="block"
+      class="block w-2/3"
     />
     <date-picker
       v-model="time"
       value-type="DD/MM/YYYY"
       :disabled-date="disabledDate"
-      class="block"
+      class="block w-2/3"
     >
       <template v-slot:input>
-        <base-input :value="time" class="flex" placeholder="Date" />
+        <base-input :value="time" class="flex w-full" placeholder="Date" />
       </template>
     </date-picker>
     <base-button color="primary" size="md" type="submit"
